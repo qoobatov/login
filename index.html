@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="./styles/signin.css">
     <title>Login</title>
   </head>
   <body>
@@ -12,28 +13,105 @@
     <div class="modal">
         <div class="modal-content">
             <div class="container-login">
-                <img src="./imgs/c2d.png" alt="">
+                <img class="c2d-logo" src="./imgs/c2d.png" alt="">
                 <div class="tab-btns-block">
                     <button class="btn-tab-log">Войти</button>
                     <button class="btn-tab-sign">Регистрация</button>
                 </div>
-                <form action="/" method="post">
-                    <input
-                    class="input-email"
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    /><br /><br />
-                    <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Пароль"
-                    /><br /><br />
-                    <button class="btn-login">Войти</button>
-                </form>
-                <a class="forgot-password" href="#">Забыли пароль?</a>
+                <div class="tabs-block">
+                    <div class="tab-content-1">
+                        <form action="/" method="post">
+                            <input
+                            class="input-login-email"
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Email"
+                            /><br /><br />
+
+                            <input
+                            class="input-login-password"
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Пароль"
+                            /><br /><br />
+                            <button class="btn-login">Войти</button>
+                        </form>
+                        <div class=" block-for-relative">
+                            <div class="reset-password-block">
+                                <a class="forgot-password" href="#">Забыли пароль?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content-2">
+                        <div class="tab-content-wrapper">
+                            <form action="/" method="post" >
+    
+                                <input
+                                class="input-company-name-registr"
+                                type="text"
+                                id="text"
+                                name="text"
+                                placeholder="Название организации"
+                                >
+    
+                                <input
+                                class="input-registr-email"
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email"
+                                >
+    
+                                <div>
+                                    <input
+                                    class="input-registr-name"
+                                    type="text"
+                                    id="person-name"
+                                    name="person-name"
+                                    placeholder="ФИО"
+                                                />
+                                    <input
+                                    class="input-registr-phone"
+                                    type="phone"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="Телефон"
+                                    >
+                                </div>
+    
+                                <input
+                                class="new-password-registr"
+                                type="password"
+                                id="new-password"
+                                name="new-password"
+                                placeholder="Пароль"
+                                >
+                                
+                                <input
+                                class="confirm-password-registr"
+                                type="password" 
+                                id="confirm-password" 
+                                name="confirm-password"
+                                placeholder="Подтвердите пароль"
+                                >
+                                <div class="container-checkbox">
+                                    <input 
+                                    class="checkbox"
+                                    type="checkbox"
+                                    id="accept-the-terms"
+                                    name="accept-the-terms"
+                                    value="terms-and-conditions">
+                                    <label for="accept-the-terms">Я даю согласие на обработку персональных данных</label>
+                                </div>
+    
+                                <button class="btn-registr">Зарегистрироваться</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
