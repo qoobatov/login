@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.container-login {
+  width: 570px;
+  height: 460px;
+  background-color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #8bc011;
+  padding: 15px;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+
+input[type="email"] {
+  width: 450px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+input[type="password"] {
+  width: 450px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn-login {
+  width: 450px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  /* margin: 10px 0; */
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
+}
+
+.forgot-password {
+  text-decoration: none;
+  padding-top: 10px;
+}
+
+.tab-btns-block {
+  width: 450px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.btn-tab-log {
+  width: 150px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 13px;
+  margin-bottom: 30px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+}
+.btn-tab-sign {
+  width: 200px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 13px;
+  margin-bottom: 30px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+}
+
+.btn-tab-log:hover,
+.btn-tab-log:focus {
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
+}
+.btn-tab-sign:hover,
+.btn-tab-sign:focus {
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  padding: 70px;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
