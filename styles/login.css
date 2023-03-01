@@ -23,17 +23,15 @@ input:focus {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #8bc011;
   padding: 15px;
   padding-top: 10px;
   margin: 0 auto;
 }
 
-
 .input-login-email {
   width: 450px;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border: 0;
   border: 1px solid #c2bfbf;
   border-radius: 15px;
@@ -44,7 +42,7 @@ input:focus {
 .input-login-password {
   width: 450px;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   /* margin: 10px 0; */
   border: 0;
   border: 1px solid #c2bfbf;
@@ -169,8 +167,8 @@ input:focus {
 }
 
 .tab-content-2 {
-  /* display: none; */
+  display: none;
 }
 .tab-content-3 {
-  display: none;
+  /* display: none; */
 }

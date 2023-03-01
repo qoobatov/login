@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #55dcaa;
+}
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reset-text-info {
+  width: 450px;
+  text-align: center;
+}
+
+.input-reset-email {
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.reset-btns-block {
+  width: 450px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-reset-cancel {
+  width: 200px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 13px;
+  margin-bottom: 30px;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+}
+.btn-reset-send {
+  width: 200px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 13px;
+  margin-bottom: 30px;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+}
+
+.btn-reset-cancel:hover,
+.btn-reset-cancel:focus {
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
+}
+.btn-reset-send:hover,
+.btn-reset-send:focus {
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
+}

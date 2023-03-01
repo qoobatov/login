@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/login.css" />
     <link rel="stylesheet" href="./styles/signin.css">
+    <link rel="stylesheet" href="./styles/reset-pass.css">
     <title>Login</title>
   </head>
   <body>
@@ -62,11 +63,10 @@
                                 <input
                                 class="input-registr-email"
                                 type="email"
-                                id="email"
-                                name="email"
+                                id="registr-email"
+                                name="registr-email"
                                 placeholder="Email"
                                 focus
-
                                 >
     
                                 <div>
@@ -115,14 +115,26 @@
                             </form>
                         </div>
                     </div>
-                <div class="tab-content-3">
-                    <div class="tab-content">
-                        <p class="">
-                            Укажите ваш e-mail, который был использован при регистрации. На него будет выслано письмо со ссылкой на изменение пароля
-                        </p>
+                    <div class="tab-content-3">
+                        <div class="tab-content">
+                            <p class="reset-text-info">
+                                Укажите ваш e-mail, который был использован при регистрации. На него будет выслано письмо со <br/>ссылкой на изменение пароля
+                            </p> 
+                            <form action="/" method="post">
+                                <input
+                                class="input-reset-email"
+                                type="email"
+                                id="reset-email"
+                                name="reset-email"
+                                placeholder="Email"
+                                >
+                                <div class="reset-btns-block">
+                                    <button class="btn-reset-cancel">Отмена</button>
+                                    <button class="btn-reset-send">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-
-                </div>
                 </div>
             </div>
         </div>
