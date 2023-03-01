@@ -20,32 +20,35 @@
                 </div>
                 <div class="tabs-block">
                     <div class="tab-content-1">
-                        <form action="/" method="post">
-                            <input
-                            class="input-login-email"
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Email"
-                            /><br /><br />
-
-                            <input
-                            class="input-login-password"
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Пароль"
-                            /><br /><br />
-                            <button class="btn-login">Войти</button>
-                        </form>
-                        <div class=" block-for-relative">
-                            <div class="reset-password-block">
-                                <a class="forgot-password" href="#">Забыли пароль?</a>
+                        <div class="tab-content">
+                            <form action="/" method="post">
+                                <input
+                                class="input-login-email"
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email"
+                                /><br />
+    
+                                <input
+                                class="input-login-password"
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Пароль"
+                                /><br />
+                                <button class="btn-login">Войти</button>
+                            </form>
+                            <div class=" block-for-relative">
+                                <div class="reset-password-block">
+                                    <a class="forgot-password" href="#">Забыли пароль?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="tab-content-2">
-                        <div class="tab-content-wrapper">
+                        <div class="tab-content">
                             <form action="/" method="post" >
     
                                 <input
@@ -62,6 +65,8 @@
                                 id="email"
                                 name="email"
                                 placeholder="Email"
+                                focus
+
                                 >
     
                                 <div>
@@ -110,8 +115,15 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                <div class="tab-content-3">
+                    <div class="tab-content">
+                        <p class="">
+                            Укажите ваш e-mail, который был использован при регистрации. На него будет выслано письмо со ссылкой на изменение пароля
+                        </p>
+                    </div>
 
+                </div>
+                </div>
             </div>
         </div>
     </div>

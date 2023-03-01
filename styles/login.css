@@ -4,6 +4,9 @@
 *:after {
   box-sizing: border-box;
 }
+input:focus {
+  border-color: #55dcaa;
+}
 
 /* body {
   padding-top: 40px;
@@ -26,14 +29,11 @@
   margin: 0 auto;
 }
 
-.c2d-logo {
-  object-fit: contain;
-  width: 50%;
-}
 
 .input-login-email {
   width: 450px;
   padding: 10px;
+  margin-bottom: 15px;
   border: 0;
   border: 1px solid #c2bfbf;
   border-radius: 15px;
@@ -44,7 +44,8 @@
 .input-login-password {
   width: 450px;
   padding: 10px;
-  margin: 10px 0;
+  margin-bottom: 15px;
+  /* margin: 10px 0; */
   border: 0;
   border: 1px solid #c2bfbf;
   border-radius: 15px;
@@ -66,6 +67,7 @@
   outline: none;
   border: 2px solid #55dcaa;
   background-color: #fff;
+  margin-bottom: 20px;
 }
 
 .btn-login:hover,
@@ -73,6 +75,7 @@
   background-color: #55dcaa;
   cursor: pointer;
   color: #fff;
+  border-color: #55dcaa;
 }
 .block-for-relative {
   width: 450px;
@@ -88,6 +91,7 @@
   right: 145px;
   font-family: inherit;
   text-decoration: none;
+  margin-bottom: 15px;
 }
 
 .tab-btns-block {
@@ -166,4 +170,7 @@
 
 .tab-content-2 {
   /* display: none; */
+}
+.tab-content-3 {
+  display: none;
 }

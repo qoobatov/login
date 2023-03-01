@@ -5,7 +5,11 @@
   box-sizing: border-box;
 }
 
-.tab-content-wrapper form {
+input:focus{
+  border-color: #55dcaa;
+}
+
+.tab-content form {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -103,7 +107,7 @@
   font-size: 16px;
   font-weight: 600;
   padding: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   border: 0;
   border-radius: 25px;
   outline: none;
@@ -117,3 +121,4 @@
   cursor: pointer;
   color: #fff;
 }
+
