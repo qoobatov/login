@@ -5,146 +5,150 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/login.css" />
-    <link rel="stylesheet" href="./styles/signin.css">
-    <link rel="stylesheet" href="./styles/reset-pass.css">
+    <link rel="stylesheet" href="./styles/signin.css" />
+    <link rel="stylesheet" href="./styles/reset-pass.css" />
     <title>Login</title>
   </head>
   <body>
-
     <div class="button-for-modal-block">
-        <button data-modal class="button-for-modal">Вход/Регистрация</button>
+      <button data-modal class="button-for-modal">Вход/Регистрация</button>
     </div>
-    <!-- start  and modal login -->  
+    <!-- start  and modal login -->
     <div class="modal">
-        <div data-close class="modal-close">&times;</div>
-        <div class="modal-content">
-            <div class="container-login">
-                <img class="c2d-logo" src="./imgs/c2d.png" alt="">
-                <div class="tab-btns-block">
-                    <button class="btn-tab-log btn-tab-log_active">Войти</button>
-                    <button class="btn-tab-sign">Регистрация</button>
-                </div>
-                <div class="tabs-block">
-                    <div class="tab-content-1">
-                        <div class="tab-content">
-                            <form action="/" method="post">
-                                <input
-                                class="input-login-email"
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Email"
-                                /><br />
-    
-                                <input
-                                class="input-login-password"
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="Пароль"
-                                /><br />
-                                <button class="btn-login">Войти</button>
-                            </form>
-                            <div class=" block-for-relative">
-                                <div class="reset-password-block">
-                                    <a class="forgot-password" href="#">Забыли пароль?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div data-close class="modal-close">&times;</div>
+      <div class="modal-content">
+        <div class="container-login">
+          <img class="c2d-logo" src="./imgs/c2d.png" alt="" />
 
-                    <div class="tab-content-2">
-                        <div class="tab-content">
-                            <form action="/" method="post" >
-    
-                                <input
-                                class="input-company-name-registr"
-                                type="text"
-                                id="text"
-                                name="text"
-                                placeholder="Название организации"
-                                >
-    
-                                <input
-                                class="input-registr-email"
-                                type="email"
-                                id="registr-email"
-                                name="registr-email"
-                                placeholder="Email"
-                                focus
-                                >
-    
-                                <div>
-                                    <input
-                                    class="input-registr-name"
-                                    type="text"
-                                    id="person-name"
-                                    name="person-name"
-                                    placeholder="ФИО"
-                                                />
-                                    <input
-                                    class="input-registr-phone"
-                                    type="phone"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="Телефон"
-                                    >
-                                </div>
-    
-                                <input
-                                class="new-password-registr"
-                                type="password"
-                                id="new-password"
-                                name="new-password"
-                                placeholder="Пароль"
-                                >
-                                
-                                <input
-                                class="confirm-password-registr"
-                                type="password" 
-                                id="confirm-password" 
-                                name="confirm-password"
-                                placeholder="Подтвердите пароль"
-                                >
-                                <div class="container-checkbox">
-                                    <input 
-                                    class="checkbox"
-                                    type="checkbox"
-                                    id="accept-the-terms"
-                                    name="accept-the-terms"
-                                    value="terms-and-conditions">
-                                    <label for="accept-the-terms">Я даю согласие на обработку персональных данных</label>
-                                </div>
-    
-                                <button class="btn-registr">Зарегистрироваться</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="tab-content-3">
-                        <div class="tab-content">
-                            <p class="reset-text-info">
-                                Укажите ваш e-mail, который был использован при регистрации. На него будет выслано письмо со <br/>ссылкой на изменение пароля
-                            </p> 
-                            <form action="/" method="post">
-                                <input
-                                class="input-reset-email"
-                                type="email"
-                                id="reset-email"
-                                name="reset-email"
-                                placeholder="Email"
-                                >
-                                <div class="reset-btns-block">
-                                    <button class="btn-reset-cancel">Отмена</button>
-                                    <button class="btn-reset-send">Отправить</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+          <div class="tab-btns-block">
+            <button class="btn-tab-log btn-tab-log_active button">Войти</button>
+            <button class="btn-tab-sign button">Регистрация</button>
+          </div>
+
+          <div class="tabs-block">
+            <div class="tab-content">
+              <div class="tab-content-login">
+                <form action="/" method="post">
+                  <input
+                    class="input-login-email"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                  /><br />
+
+                  <input
+                    class="input-login-password"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Пароль"
+                  /><br />
+                  <button class="btn-login">Войти</button>
+                </form>
+                <div class="block-for-relative">
+                  <div class="reset-password-parent">
+                    <a class="forgot-password" href="#">Забыли пароль?</a>
+                  </div>
                 </div>
+              </div>
             </div>
+
+            <div class="tab-content">
+              <div class="tab-content-registration">
+                <form action="/" method="post">
+                  <input
+                    class="input-company-name-registr"
+                    type="text"
+                    id="text"
+                    name="text"
+                    placeholder="Название организации"
+                  />
+
+                  <input
+                    class="input-registr-email"
+                    type="email"
+                    id="registr-email"
+                    name="registr-email"
+                    placeholder="Email"
+                    focus
+                  />
+
+                  <div>
+                    <input
+                      class="input-registr-name"
+                      type="text"
+                      id="person-name"
+                      name="person-name"
+                      placeholder="ФИО"
+                    />
+                    <input
+                      class="input-registr-phone"
+                      type="phone"
+                      id="phone"
+                      name="phone"
+                      placeholder="Телефон"
+                    />
+                  </div>
+
+                  <input
+                    class="new-password-registr"
+                    type="password"
+                    id="new-password"
+                    name="new-password"
+                    placeholder="Пароль"
+                  />
+
+                  <input
+                    class="confirm-password-registr"
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                    placeholder="Подтвердите пароль"
+                  />
+                  <div class="container-checkbox">
+                    <input
+                      class="checkbox"
+                      type="checkbox"
+                      id="accept-the-terms"
+                      name="accept-the-terms"
+                      value="terms-and-conditions"
+                    />
+                    <label for="accept-the-terms"
+                      >Я даю согласие на обработку персональных данных</label
+                    >
+                  </div>
+
+                  <button class="btn-registr">Зарегистрироваться</button>
+                </form>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div class="tab-content-reset">
+                <p class="reset-text-info">
+                  Укажите ваш e-mail, который был использован при регистрации.
+                  На него будет выслано письмо со <br />ссылкой на изменение
+                  пароля
+                </p>
+                <form action="/" method="post">
+                  <input
+                    class="input-reset-email"
+                    type="email"
+                    id="reset-email"
+                    name="reset-email"
+                    placeholder="Email"
+                  />
+                  <div class="reset-btns-block">
+                    <a class="btn-reset-cancel">Отмена</a>
+                    <button class="btn-reset-send">Отправить</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

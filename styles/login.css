@@ -28,6 +28,10 @@ input:focus {
   margin: 0 auto;
 }
 
+.top-space {
+  margin-top: 70px;
+}
+
 .input-login-email {
   width: 450px;
   padding: 10px;
@@ -80,7 +84,7 @@ input:focus {
   padding: 15px;
 }
 
-.reset-password-block {
+.reset-password-parent {
   position: relative;
 }
 .forgot-password {
@@ -92,55 +96,6 @@ input:focus {
   margin-bottom: 15px;
 }
 
-.tab-btns-block {
-  width: 450px;
-  height: auto;
-  display: flex;
-  justify-content: space-around;
-}
-.btn-tab-log {
-  width: 150px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px;
-  margin-bottom: 30px;
-  border: 0;
-  border-radius: 25px;
-  outline: none;
-  border: 2px solid #55dcaa;
-  background-color: #fff;
-}
-.btn-tab-sign {
-  width: 200px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 13px;
-  margin-bottom: 30px;
-  border: 0;
-  border-radius: 25px;
-  outline: none;
-  border: 2px solid #55dcaa;
-  background-color: #fff;
-}
-
-.top-space {
-  padding: 70px;
-}
-
-.btn-tab-log:hover,
-.btn-tab-log:focus {
-  background-color: #55dcaa;
-  cursor: pointer;
-  color: #fff;
-}
-.btn-tab-sign:hover,
-.btn-tab-sign:focus {
-  background-color: #55dcaa;
-  cursor: pointer;
-  color: #fff;
-}
 /* ***********************************modal******************************************** */
 .button-for-modal-block {
   display: flex;
@@ -164,7 +119,6 @@ input:focus {
   margin-bottom: 20px;
   background-color: #55dcaa;
   cursor: pointer;
-
 }
 
 .modal {
@@ -202,13 +156,48 @@ input:focus {
 }
 /* **************************************         tabs         *********************************************************** */
 
-.tab-content-1 {
-  /* display: none; */
+.tab-btns-block {
+  width: 450px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.btn-tab-log {
+  width: 150px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 13px;
+  margin-bottom: 30px;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+}
+.btn-tab-sign {
+  width: 200px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 13px;
+  margin-bottom: 30px;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
 }
 
-.tab-content-2 {
-  display: none;
+.btn-tab-log:hover,
+.btn-tab-log:focus {
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
 }
-.tab-content-3 {
-  display: none;
+.btn-tab-sign:hover,
+.btn-tab-sign:focus {
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
 }
