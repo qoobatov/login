@@ -10,7 +10,6 @@ window.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("hide");
     document.body.style.overflow = "hidden";
   }
-
   modalTrigger.addEventListener("click", openModal);
 
   function closeModal() {
@@ -18,19 +17,28 @@ window.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("show");
     document.body.style.overflow = "";
   }
+  modalCloseBtn.addEventListener("click", closeModal);
 
-    modalCloseBtn.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // если че для Esc
+  // это если че для Esc
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeModal();
     }
   });
+
+  //   modal.addEventListener("click", (e) => {  эта функция нужна для закрытия модального окна, если клиент кликнет по любой части модалки.
+  //     if (e.target === modal) {
+  //       closeModal();
+  //     }
+  //   });
+
+  // ********************************* tabs *******************************************************
+
+
+
+
+
+
+
+  
 });
