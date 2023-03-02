@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input:focus{
+  border-color: #55dcaa;
+}
+
+.tab-content form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input-company-name-registr {
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 25px;
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.input-registr-email {
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.input-registr-name {
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 25px;
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 46px;
+}
+
+.input-registr-phone {
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 25px;
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.new-password-registr {
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 25px;
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+.confirm-password-registr {
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 25px;
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container-checkbox {
+  margin-bottom: 25px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.checkbox {
+  transform: scale(1.5);
+  opacity: 0.9;
+  cursor: pointer;
+  background-color: #55dcaa;
+}
+
+.btn-registr {
+  width: 450px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  margin-bottom: 17px;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+}
+
+.btn-registr:hover,
+.btn-registr:focus {
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
+}
+
