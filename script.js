@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const btns = document.querySelectorAll(".button"),
     tabsContent = document.querySelectorAll(".tab-content"),
     btnsParent = document.querySelector(".tab-btns-block"),
-    resetLinkParent = document.querySelector(".reset-input-parent"),
+    resetLinkParent = document.querySelector(".reset-password-parent"),
     resetBtnParent = document.querySelector(".reset-btns-block"),
     addedMargin = document.querySelector(".container-login");
 
@@ -70,15 +70,14 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-if(resetBtnParent){
+
   resetLinkParent.addEventListener("click", (e) => {
     const target = e.target;
-    if (target && target.classList.contains("forgot-input")) {
+    if (target && target.classList.contains("forgot-password")) {
       hideTabContent();
       showTabContent(2);
     }
   });
-}
 
   resetBtnParent.addEventListener("click", (e) => {
     const target = e.target;
@@ -98,8 +97,8 @@ if(resetBtnParent){
   const email = document.getElementById("registr-email");
   const name = document.getElementById("registr-name");
   const phone = document.getElementById("phone");
-  const input = document.getElementById("new-input");
-  const confirmPassword = document.getElementById("confirm-input");
+  const password = document.getElementById("new-password");
+  const confirmPassword = document.getElementById("confirm-password");
   const checkTerms = document.getElementById("check-terms");
 
   // input values
@@ -107,11 +106,10 @@ if(resetBtnParent){
   const emailValue = email.value.trim();
   const nameValue = name.value.trim();
   const phoneValue = phone.value;
-  const passwordValue = input.value.trim();
+  const passwordValue = password.value.trim();
   const confirmPasswordValue = confirmPassword.value.trim();
 
   formRegistration.addEventListener("submit", (event) => {
-
     event.preventDefault();
 
     function validateNotEmpty(input) {
@@ -125,7 +123,6 @@ if(resetBtnParent){
 
     validateNotEmpty(companyName);
 
-    
     function validateEmail(input) {
       const atIndex = input.indexOf("@");
       const dotIndex = input.lastIndexOf(".");
