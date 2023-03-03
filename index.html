@@ -28,7 +28,7 @@
           <div class="tabs-block">
             <div class="tab-content">
               <div class="tab-content-login">
-                <form action="/" method="post">
+                <form id="form-login" action="/" method="post">
                   <input
                     class="input-login-email"
                     type="email"
@@ -56,11 +56,11 @@
 
             <div class="tab-content">
               <div class="tab-content-registration">
-                <form action="/" method="post">
+                <form id="form-registration" action="#">
                   <input
                     class="input-company-name-registr"
                     type="text"
-                    id="text"
+                    id="company-name"
                     name="text"
                     placeholder="Название организации"
                   />
@@ -71,14 +71,13 @@
                     id="registr-email"
                     name="registr-email"
                     placeholder="Email"
-                    focus
                   />
 
                   <div>
                     <input
                       class="input-registr-name"
                       type="text"
-                      id="person-name"
+                      id="registr-name"
                       name="person-name"
                       placeholder="ФИО"
                     />
@@ -110,7 +109,7 @@
                     <input
                       class="checkbox"
                       type="checkbox"
-                      id="accept-the-terms"
+                      id="check-terms"
                       name="accept-the-terms"
                       value="terms-and-conditions"
                     />
@@ -119,10 +118,13 @@
                     >
                   </div>
 
-                  <button class="btn-registr">Зарегистрироваться</button>
+                  <button type="submit" class="btn-registr">
+                    Зарегистрироваться
+                  </button>
                 </form>
               </div>
             </div>
+
             <div class="tab-content">
               <div class="tab-content-reset">
                 <p class="reset-text-info">
