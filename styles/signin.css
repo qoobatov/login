@@ -27,14 +27,10 @@ input:focus {
   font-size: inherit;
 }
 
-.error {
-  border-color: red;
-}
-
 .input-registr-email {
   width: 450px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border: 0;
   border: 1px solid #c2bfbf;
   border-radius: 15px;
@@ -43,6 +39,9 @@ input:focus {
   font-size: inherit;
 }
 
+.registr-name-phone-container {
+  display: flex;
+}
 .input-registr-name {
   width: 200px;
   padding: 10px;
@@ -68,6 +67,10 @@ input:focus {
   font-size: inherit;
 }
 
+.phone-registr-relative {
+  position: relative;
+}
+
 .new-password-registr {
   width: 450px;
   padding: 10px;
@@ -79,6 +82,10 @@ input:focus {
   font-family: inherit;
   font-size: inherit;
 }
+
+.new-password-registr-relative {
+  position: relative;
+}
 .confirm-password-registr {
   width: 450px;
   padding: 10px;
@@ -89,6 +96,10 @@ input:focus {
   outline: none;
   font-family: inherit;
   font-size: inherit;
+}
+
+.confirm-password-registr-relative {
+  position: relative;
 }
 
 .container-checkbox {

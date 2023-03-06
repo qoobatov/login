@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/login.css" />
     <link rel="stylesheet" href="./styles/signin.css" />
     <link rel="stylesheet" href="./styles/reset-pass.css" />
+    <link rel="stylesheet" href="./styles/test.css" />
     <title>Login</title>
   </head>
   <body>
@@ -18,13 +19,15 @@
       <div data-close class="modal-close">&times;</div>
       <div class="modal-content">
         <div class="container-login">
+          <!-- ----------------------------------------header logo ------------------------------------------------->
+
           <img class="c2d-logo" src="./imgs/c2d.png" alt="" />
 
           <div class="tab-btns-block">
             <button class="btn-tab-log btn-tab-log_active button">Войти</button>
             <button class="btn-tab-sign button">Регистрация</button>
           </div>
-
+          <!-- ---------------------------------------------------header logo------------------------------------- -->
           <div class="tabs-block">
             <div class="tab-content">
               <div class="tab-content-login">
@@ -43,6 +46,7 @@
                     id="password"
                     name="password"
                     placeholder="Пароль"
+                    autocomplete="off"
                   /><br />
                   <button class="btn-login">Войти</button>
                 </form>
@@ -56,55 +60,75 @@
 
             <div class="tab-content">
               <div class="tab-content-registration">
-                <form id="form-registration" action="#">
-                  <input
-                    class="input-company-name-registr"
-                    type="text"
-                    id="company-name"
-                    name="text"
-                    placeholder="Название организации"
-                  />
-
-                  <input
-                    class="input-registr-email"
-                    type="email"
-                    id="registr-email"
-                    name="registr-email"
-                    placeholder="Email"
-                  />
+                <form id="form-registration" action="/">
+                  <div>
+                    <input
+                      class="input-company-name-registr field"
+                      type="text"
+                      id="company-name"
+                      name="text"
+                      placeholder="Название организации"
+                    />
+                    <div class="error-registr"></div>
+                  </div>
 
                   <div>
                     <input
-                      class="input-registr-name"
-                      type="text"
-                      id="registr-name"
-                      name="person-name"
-                      placeholder="ФИО"
+                      class="input-registr-email field"
+                      type="email"
+                      id="registr-email"
+                      name="registr-email"
+                      placeholder="Email"
                     />
-                    <input
-                      class="input-registr-phone"
-                      type="phone"
-                      id="phone"
-                      name="phone"
-                      placeholder="Телефон"
-                    />
+                    <div class="error-email"></div>
                   </div>
 
-                  <input
-                    class="new-password-registr"
-                    type="password"
-                    id="new-password"
-                    name="new-password"
-                    placeholder="Пароль"
-                  />
+                  <div class="registr-name-phone-container">
+                    <div>
+                      <input
+                        class="input-registr-name field"
+                        type="text"
+                        id="registr-name"
+                        name="person-name"
+                        placeholder="ФИО"
+                      />
+                      <div class="error-name"></div>
+                    </div>
+                    <div class="phone-registr-relative">
+                      <input
+                        class="input-registr-phone field"
+                        type="phone"
+                        id="phone"
+                        name="phone"
+                        placeholder="Телефон"
+                      />
+                      <div class="error-phone"></div>
+                    </div>
+                  </div>
 
-                  <input
-                    class="confirm-password-registr"
-                    type="password"
-                    id="confirm-password"
-                    name="confirm-password"
-                    placeholder="Подтвердите пароль"
-                  />
+                  <div class="new-password-registr-relative">
+                    <input
+                      class="new-password-registr field"
+                      type="password"
+                      id="new-password"
+                      name="new-password"
+                      placeholder="Пароль"
+                      autocomplete="off"
+                    />
+                    <div class="error-password"></div>
+                  </div>
+                  <div class="confirm-password-registr-relative">
+                    <input
+                      class="confirm-password-registr field"
+                      type="password"
+                      id="confirm-password"
+                      name="confirm-password"
+                      placeholder="Подтвердите пароль"
+                      autocomplete="off"
+                    />
+                    <div class="error-confirm-password"></div>
+                  </div>
+
                   <div class="container-checkbox">
                     <input
                       class="checkbox"
@@ -121,6 +145,7 @@
                   <button type="submit" class="btn-registr">
                     Зарегистрироваться
                   </button>
+                  <div class="al"></div>
                 </form>
               </div>
             </div>

@@ -90,8 +90,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // ************************************ end tabs ******************************************************
 
   // ************************************ forms validation in block registration ******************************************
-
   // form and inputs
+  // input values
   const formRegistration = document.getElementById("form-registration");
   const companyName = document.getElementById("company-name");
   const email = document.getElementById("registr-email");
@@ -100,78 +100,130 @@ window.addEventListener("DOMContentLoaded", () => {
   const password = document.getElementById("new-password");
   const confirmPassword = document.getElementById("confirm-password");
   const checkTerms = document.getElementById("check-terms");
+  const fields = document.querySelectorAll(".field");
+  const errorMessage = document.querySelector(".error-message");
+  const error = document.querySelector(".error-registr");
+  const errorEmail = document.querySelector(".error-email");
+  const errorName = document.querySelector(".error-name");
+  const errorPhone = document.querySelector(".error-phone");
+  const errorPassword = document.querySelector(".error-password");
+  const errorConfirmPassword = document.querySelector(
+    ".error-confirm-password"
+  );
 
-  // input values
-  const companyNameValue = companyName.value.trim();
-  const emailValue = email.value.trim();
-  const nameValue = name.value.trim();
-  const phoneValue = phone.value;
-  const passwordValue = password.value.trim();
-  const confirmPasswordValue = confirmPassword.value.trim();
-
-  formRegistration.addEventListener("submit", (event) => {
+  formRegistration.addEventListener("click", function (event) {
     event.preventDefault();
+    //----------------------------------------------------------values--------------------------------------------
+    let companyNameValue = companyName.value.trim();
+    const emailValue = email.value.trim();
+    const nameValue = name.value.trim();
+    const phoneValue = phone.value;
+    const passwordValue = password.value.trim();
+    const confirmPasswordValue = confirmPassword.value.trim();
 
-    function validateNotEmpty(input) {
-      if (input.value === "") {
-        input.focus();
-        input.classList.add("error");
-        return false;
+    console.log("value companyName", companyNameValue);
+    console.log("value email", emailValue);
+    console.log("value name", nameValue);
+    console.log("value phone", phoneValue);
+    console.log("value password", passwordValue);
+    console.log("value confirmPassword", confirmPasswordValue);
+
+    fields.forEach((field) => {
+      if (field.value==='') {
+
       }
-      return true;
-    }
+    });
 
-    validateNotEmpty(companyName);
+    validateNotEmpty(
+      companyName,
+      error,
+      "* Пожалуйста, введите название компании."
+    );
+    validateNotEmpty(email, errorEmail, "* Это поле не может быть пустым.");
+    validateNotEmpty(name, errorName, "* Заполните имя.");
+    validateNotEmpty(phone, errorPhone, "* Введите номер.");
+    validateNotEmpty(
+      password,
+      errorPassword,
+      "* Поле 'Пароль' не может быть пустым"
+    );
+    validateNotEmpty(
+      confirmPassword,
+      errorConfirmPassword,
+      "* Поле не может быть пустым"
+    );
 
-    function validateEmail(input) {
-      const atIndex = input.indexOf("@");
-      const dotIndex = input.lastIndexOf(".");
-      if (
-        atIndex < 1 ||
-        dotIndex < atIndex + 2 ||
-        dotIndex + 2 >= input.length
-      ) {
-        alert("Введите корректный адрес электронной почты");
-        return false;
-      }
-      return true;
-    }
+    // if (!companyNameValue) {
+    //   error.classList.add("blank-company-name");
+    //   companyName.style.borderColor = "red";
+    //   error.innerText = "* это обязательное поле";
+    //   companyName.parentElement.insertBefore(error, companyName);
+    // }
 
-    function validateRange(input, min, max) {
-      const value = parseFloat(input.value);
-      if (value < min || value > max) {
-        alert(`Поле должно содержать значение от ${min} до ${max}`);
-        return false;
-      }
-      return true;
-    }
+    // function validateEmail(input) {
+    //   const atIndex = input.indexOf("@");
+    //   const dotIndex = input.lastIndexOf(".");
+    //   if (
+    //     atIndex < 1 ||
+    //     dotIndex < atIndex + 2 ||
+    //     dotIndex + 2 >= input.length
+    //   ) {
+    //     alert("Введите корректный адрес электронной почты");
+    //     return false;
+    //   }
+    //   return true;
+    // }
 
-    function validatePassword(input) {
-      // Проверка длины пароля
-      if (input.length < 10) {
-        alert("Пароль должен содержать не менее 8 символов");
-        return false;
-      }
+    // function validateRange(input, min, max) {
+    //   const value = parseFloat(input.value);
+    //   if (value < min || value > max) {
+    //     alert(`Поле должно содержать значение от ${min} до ${max}`);
+    //     return false;
+    //   }
+    //   return true;
+    // }
 
-      // Проверка наличия цифр
-      if (!/\d/.test(input)) {
-        alert("Пароль должен содержать хотя бы одну цифру");
-        return false;
-      }
+    // function validatePassword(input) {
+    //   // Проверка длины пароля
+    //   if (input.length < 10) {
+    //     alert("Пароль должен содержать не менее 8 символов");
+    //     return false;
+    //   }
 
-      // Проверка наличия букв в верхнем и нижнем регистрах
-      if (!/[a-z]/.test(input) || !/[A-Z]/.test(input)) {
-        alert("Пароль должен содержать буквы в верхнем и нижнем регистрах");
-        return false;
-      }
+    //   // Проверка наличия цифр
+    //   if (!/\d/.test(input)) {
+    //     alert("Пароль должен содержать хотя бы одну цифру");
+    //     return false;
+    //   }
 
-      // Проверка наличия специальных символов
-      if (!/[!@#$%^&*()_+{}\[\]:;'"<>,.?\/\\~-]/.test(input)) {
-        alert("Пароль должен содержать хотя бы один специальный символ");
-        return false;
-      }
+    //   // Проверка наличия букв в верхнем и нижнем регистрах
+    //   if (!/[a-z]/.test(input) || !/[A-Z]/.test(input)) {
+    //     alert("Пароль должен содержать буквы в верхнем и нижнем регистрах");
+    //     return false;
+    //   }
 
-      return true;
-    }
+    //   // Проверка наличия специальных символов
+    //   if (!/[!@#$%^&*()_+{}\[\]:;'"<>,.?\/\\~-]/.test(input)) {
+    //     alert("Пароль должен содержать хотя бы один специальный символ");
+    //     return false;
+    //   }
+
+    //   return true;
+    // }
   });
+  function validateNotEmpty(input, err, inText) {
+    input.onblur = function () {
+      if (input.value.length === 0) {
+        input.classList.add("invalid");
+        err.innerHTML = inText;
+      }
+    };
+    input.onfocus = function () {
+      if (this.classList.contains("invalid")) {
+        // удаляем индикатор ошибки, т.к. пользователь хочет ввести данные заново
+        this.classList.remove("invalid");
+        err.innerHTML = "";
+      }
+    };
+  }
 });

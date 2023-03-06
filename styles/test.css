@@ -1,0 +1,40 @@
+.invalid {
+  border-color: red;
+}
+
+.error-registr {
+  color: red;
+  position: absolute;
+  top: 230px;
+}
+
+.error-email {
+  color: red;
+  position: absolute;
+  top: 299px;
+}
+
+.error-name {
+  color: red;
+  position: absolute;
+  top: 368px;
+}
+.error-phone {
+  color: red;
+  position: absolute;
+  top: 40px;
+}
+
+.error-password {
+  color: red;
+  position: absolute;
+  top: 41px;
+  right: 158px;
+}
+
+.error-confirm-password {
+  color: red;
+  position: absolute;
+  top: 41px;
+  right: 225px;
+}
