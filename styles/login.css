@@ -23,7 +23,7 @@ input:focus {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 15px;
+  padding: 10px;
   padding-top: 10px;
   margin: 0 auto;
 }
@@ -200,4 +200,25 @@ input:focus {
   background-color: #55dcaa;
   cursor: pointer;
   color: #fff;
+}
+/* ************************************* */
+
+.eye-login-container {
+  position: relative;
+}
+.eye-on-pass-login {
+  position: absolute;
+  top: -63px;
+  right: 13px;
+  display: none;
+}
+.eye-off-pass-login {
+  position: absolute;
+  top: -63px;
+  right: 13px;
+}
+
+.eye-off-pass-login:hover,
+.eye-on-pass-login:hover {
+  color: #55dcaa;
 }

@@ -90,88 +90,231 @@ window.addEventListener("DOMContentLoaded", () => {
   // ************************************ end tabs ******************************************************
 
   // ************************************ forms validation in block registration ******************************************
-
   // form and inputs
   const formRegistration = document.getElementById("form-registration");
   const companyName = document.getElementById("company-name");
-  const email = document.getElementById("registr-email");
+  const email = document.querySelector("#registr-email");
   const name = document.getElementById("registr-name");
   const phone = document.getElementById("phone");
   const password = document.getElementById("new-password");
   const confirmPassword = document.getElementById("confirm-password");
-  const checkTerms = document.getElementById("check-terms");
+  const error = document.querySelector(".error-registr");
+  const errorEmail = document.querySelector(".error-email");
+  const errorName = document.querySelector(".error-name");
+  const errorPhone = document.querySelector(".error-phone");
+  const errorPassword = document.querySelector(".error-password");
+  const errorConfirmPassword = document.querySelector(
+    ".error-confirm-password"
+  );
+  const label = document.querySelector(".label");
+  const fields = document.querySelectorAll(".field");
+  const checkBox = document.getElementById("check-terms");
+  const eyeOnPass = document.querySelector(".eye-on-pass");
+  const eyeOffPass = document.querySelector(".eye-off-pass");
+  const eyeConfirmOnPass = document.querySelector(".eye-confirm-on-pass");
+  const eyeConfirmOffPass = document.querySelector(".eye-confirm-off-pass");
 
-  // input values
-  const companyNameValue = companyName.value.trim();
-  const emailValue = email.value.trim();
-  const nameValue = name.value.trim();
-  const phoneValue = phone.value;
-  const passwordValue = password.value.trim();
-  const confirmPasswordValue = confirmPassword.value.trim();
+  // Функции для конкретных проверок  ---------------------------------------------------..
 
-  formRegistration.addEventListener("submit", (event) => {
+  const validateEmail = (email) => {
+    let regex =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(String(email).toLowerCase());
+  };
+
+  function validatePassword(password) {
+    const passwordRegex =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{10,}$/;
+    return passwordRegex.test(password);
+  }
+
+  eyeOffPass.addEventListener("click", function (event) {
+    const target = event.target;
+    if (target) {
+      eyeOnPass.style.display = "block";
+      eyeOffPass.style.display = "none";
+      password.type = "text";
+    }
+
+    eyeOnPass.addEventListener("click", function (e) {
+      if (e.target) {
+        eyeOnPass.style.display = "none";
+        eyeOffPass.style.display = "block";
+        password.type = "password";
+      }
+    });
+  });
+  eyeConfirmOffPass.addEventListener("click", function (event) {
+    const target = event.target;
+    if (target) {
+      eyeConfirmOnPass.style.display = "block";
+      eyeConfirmOffPass.style.display = "none";
+      confirmPassword.type = "text";
+    }
+
+    eyeConfirmOnPass.addEventListener("click", function (e) {
+      if (e.target) {
+        eyeConfirmOnPass.style.display = "none";
+        eyeConfirmOffPass.style.display = "block";
+        confirmPassword.type = "password";
+      }
+    });
+  });
+
+  // Form 'submit' ------------------------------------------------------------------------
+
+  formRegistration.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    function validateNotEmpty(input) {
-      if (input.value === "") {
-        input.focus();
-        input.classList.add("error");
-        return false;
+    let emptyInputs = Array.from(fields).filter((field) => field.value === "");
+    let companyNameValue = companyName.value;
+    let inputEmailValue = email.value;
+    let inputNameValue = name.value;
+    let inputPhoneValue = phone.value;
+    let passwordValue = password.value;
+    let confirmPasswordValue = confirmPassword.value;
+    const notificationPass = document.querySelector(".notification-password");
+    const textFailEmail = document.querySelector(".text-fail-email");
+    const notMatch = document.querySelector(".not-match");
+
+    console.log(
+      companyNameValue,
+      inputEmailValue,
+      inputNameValue,
+      inputPhoneValue,
+      passwordValue,
+      confirmPasswordValue
+    );
+
+    // глазок пароля
+
+    const response = await fetch(
+      "https://web.chat2desk.kg/api/user/sign_up?lang=ru",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          companyNameValue,
+          inputEmailValue,
+          inputNameValue,
+          inputPhoneValue,
+          passwordValue,
+          confirmPasswordValue,
+        }),
       }
-      return true;
+    );
+
+    // заставка
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+    } else {
+      console.log("Данные не отправлены");
     }
 
-    validateNotEmpty(companyName);
-
-    function validateEmail(input) {
-      const atIndex = input.indexOf("@");
-      const dotIndex = input.lastIndexOf(".");
-      if (
-        atIndex < 1 ||
-        dotIndex < atIndex + 2 ||
-        dotIndex + 2 >= input.length
-      ) {
-        alert("Введите корректный адрес электронной почты");
-        return false;
+    fields.forEach((field) => {
+      if (field.value === "") {
+        field.classList.add("invalid");
+      } else {
+        field.classList.remove("invalid");
       }
-      return true;
+    });
+
+    if (emptyInputs.length !== 0) {
+      console.log("input not filled");
     }
 
-    function validateRange(input, min, max) {
-      const value = parseFloat(input.value);
-      if (value < min || value > max) {
-        alert(`Поле должно содержать значение от ${min} до ${max}`);
-        return false;
-      }
-      return true;
+    validateNotEmpty(
+      companyName,
+      error,
+      "* Пожалуйста, введите название компании."
+    );
+    validateNotEmpty(email, errorEmail, "* Это поле не может быть пустым.");
+    validateNotEmpty(name, errorName, "* Заполните имя.");
+    validateNotEmpty(phone, errorPhone, "* Введите номер.");
+    validateNotEmpty(
+      password,
+      errorPassword,
+      "* Поле 'Пароль' не может быть пустым"
+    );
+    validateNotEmpty(
+      confirmPassword,
+      errorConfirmPassword,
+      "* Поле не может быть пустым"
+    );
+
+    if (!validateEmail(inputEmailValue)) {
+      textFailEmail.classList.add("for-text-fail-email");
+      email.style.borderColor = "red";
+      textFailEmail.innerHTML =
+        'Пустой email, поле должно содержать символ @ и знак "."';
+      console.log("not valid email");
+    } else {
+      textFailEmail.classList.remove("for-text-fail-email");
+      email.style.borderColor = "#55dcaa";
+      textFailEmail.innerHTML = "";
     }
 
-    function validatePassword(input) {
-      // Проверка длины пароля
-      if (input.length < 10) {
-        alert("Пароль должен содержать не менее 8 символов");
-        return false;
-      }
-
-      // Проверка наличия цифр
-      if (!/\d/.test(input)) {
-        alert("Пароль должен содержать хотя бы одну цифру");
-        return false;
-      }
-
-      // Проверка наличия букв в верхнем и нижнем регистрах
-      if (!/[a-z]/.test(input) || !/[A-Z]/.test(input)) {
-        alert("Пароль должен содержать буквы в верхнем и нижнем регистрах");
-        return false;
-      }
-
-      // Проверка наличия специальных символов
-      if (!/[!@#$%^&*()_+{}\[\]:;'"<>,.?\/\\~-]/.test(input)) {
-        alert("Пароль должен содержать хотя бы один специальный символ");
-        return false;
-      }
-
-      return true;
+    if (!validatePassword(passwordValue)) {
+      notificationPass.classList.add("notification-for-pass");
+      password.style.borderColor = "red";
+      notificationPass.innerHTML =
+        "Пароль должен содержать min 10 символов, цифры и специальные знаки";
+      console.log("Пароль не верен");
+      console.log(passwordValue);
+    } else {
+      notificationPass.classList.remove("notification-for-pass");
+      notificationPass.innerHTML = "";
+      password.style.borderColor = "#55dcaa";
     }
+
+    if (passwordValue !== confirmPasswordValue) {
+      notMatch.classList.add("for-not-match-pass");
+      confirmPassword.style.borderColor = "red";
+      notMatch.innerHTML = "Пароли не совпатают, проверьте и повторите ввод";
+      console.log("passwords do not match");
+    } else {
+      notMatch.classList.remove("notification-for-pass");
+      notMatch.innerHTML = "";
+      confirmPassword.style.borderColor = "#55dcaa";
+      console.log("passwords match");
+    }
+
+    if (!checkBox.checked) {
+      console.log("checkbox is not checked");
+      label.classList.add("invalid");
+      // return false;
+    } else {
+      label.classList.remove("invalid");
+      label.style.color = "green";
+    }
+
+    // return false;
   });
+
+  function validateNotEmpty(input, err, inText) {
+    input.onblur = function () {
+      if (input.value.length === 0) {
+        input.classList.add("invalid");
+        err.innerHTML = inText;
+      } else {
+        input.classList.remove("invalid");
+        err.innerHTML = "";
+      }
+    };
+    input.onfocus = function () {
+      if (this.classList.contains("invalid")) {
+        // удаляем индикатор ошибки, т.к. пользователь хочет ввести данные заново
+        this.classList.remove("invalid");
+        err.innerHTML = "";
+      }
+    };
+  }
+
+  // ************************************ end forms validation in block registration ******************************************
+
+  // ************************************ fetch forms *************************************************************************
 });

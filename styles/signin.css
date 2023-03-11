@@ -27,14 +27,10 @@ input:focus {
   font-size: inherit;
 }
 
-.error {
-  border-color: red;
-}
-
 .input-registr-email {
   width: 450px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border: 0;
   border: 1px solid #c2bfbf;
   border-radius: 15px;
@@ -43,6 +39,9 @@ input:focus {
   font-size: inherit;
 }
 
+.registr-name-phone-container {
+  display: flex;
+}
 .input-registr-name {
   width: 200px;
   padding: 10px;
@@ -67,6 +66,12 @@ input:focus {
   font-family: inherit;
   font-size: inherit;
 }
+.email-registr-relative {
+  position: relative;
+}
+.phone-registr-relative {
+  position: relative;
+}
 
 .new-password-registr {
   width: 450px;
@@ -79,6 +84,10 @@ input:focus {
   font-family: inherit;
   font-size: inherit;
 }
+
+.new-password-registr-relative {
+  position: relative;
+}
 .confirm-password-registr {
   width: 450px;
   padding: 10px;
@@ -89,6 +98,10 @@ input:focus {
   outline: none;
   font-family: inherit;
   font-size: inherit;
+}
+
+.confirm-password-registr-relative {
+  position: relative;
 }
 
 .container-checkbox {
@@ -125,4 +138,47 @@ input:focus {
   background-color: #55dcaa;
   cursor: pointer;
   color: #fff;
+}
+
+/* eyes for password  */
+.eye-for-pass-block {
+  position: relative;
+}
+.eye-on-pass {
+  position: absolute;
+  top: 14px;
+  left: 418px;
+  display: none;
+  cursor: pointer;
+}
+
+.eye-off-pass {
+  position: absolute;
+  top: 14px;
+  left: 418px;
+  cursor: pointer;
+}
+
+.eye-confirm-on-pass {
+  position: absolute;
+  top: 14px;
+  left: 418px;
+  display: none;
+  cursor: pointer;
+}
+
+.eye-confirm-off-pass {
+  position: absolute;
+  top: 14px;
+  left: 418px;
+  cursor: pointer;
+}
+
+.eye-off-pass:hover,
+.eye-on-pass:hover {
+  color: #55dcaa;
+}
+.eye-confirm-off-pass:hover,
+.eye-confirm-on-pass:hover {
+  color: #55dcaa;
 }

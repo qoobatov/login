@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/login.css" />
     <link rel="stylesheet" href="./styles/signin.css" />
     <link rel="stylesheet" href="./styles/reset-pass.css" />
+    <link rel="stylesheet" href="./styles/test.css" />
+
     <title>Login</title>
   </head>
   <body>
@@ -18,17 +24,19 @@
       <div data-close class="modal-close">&times;</div>
       <div class="modal-content">
         <div class="container-login">
+          <!-- ----------------------------------------header logo ------------------------------------------------->
+
           <img class="c2d-logo" src="./imgs/c2d.png" alt="" />
 
           <div class="tab-btns-block">
             <button class="btn-tab-log btn-tab-log_active button">Войти</button>
             <button class="btn-tab-sign button">Регистрация</button>
           </div>
-
+          <!-- ---------------------------------------------------header logo------------------------------------- -->
           <div class="tabs-block">
             <div class="tab-content">
               <div class="tab-content-login">
-                <form id="form-login" action="/" method="post">
+                <form id="form-login" action="#">
                   <input
                     class="input-login-email"
                     type="email"
@@ -43,7 +51,12 @@
                     id="password"
                     name="password"
                     placeholder="Пароль"
+                    autocomplete="off"
                   /><br />
+                  <div class="eye-login-container">
+                    <i class="fa fa-eye eye-on-pass-login"></i>
+                    <i class="fa fa-eye-slash eye-off-pass-login"></i>
+                  </div>
                   <button class="btn-login">Войти</button>
                 </form>
                 <div class="block-for-relative">
@@ -56,65 +69,97 @@
 
             <div class="tab-content">
               <div class="tab-content-registration">
-                <form id="form-registration" action="#">
-                  <input
-                    class="input-company-name-registr"
-                    type="text"
-                    id="company-name"
-                    name="text"
-                    placeholder="Название организации"
-                  />
-
-                  <input
-                    class="input-registr-email"
-                    type="email"
-                    id="registr-email"
-                    name="registr-email"
-                    placeholder="Email"
-                  />
-
+                <form id="form-registration" action="/">
                   <div>
                     <input
-                      class="input-registr-name"
+                      class="input-company-name-registr field"
                       type="text"
-                      id="registr-name"
-                      name="person-name"
-                      placeholder="ФИО"
+                      id="company-name"
+                      name="text"
+                      placeholder="Название организации"
                     />
-                    <input
-                      class="input-registr-phone"
-                      type="phone"
-                      id="phone"
-                      name="phone"
-                      placeholder="Телефон"
-                    />
+                    <div class="error-registr"></div>
                   </div>
 
-                  <input
-                    class="new-password-registr"
-                    type="password"
-                    id="new-password"
-                    name="new-password"
-                    placeholder="Пароль"
-                  />
+                  <div class="email-registr-relative">
+                    <input
+                      class="input-registr-email field js-input-email"
+                      type="text"
+                      id="registr-email"
+                      name="registr-email"
+                      placeholder="Email"
+                    />
+                    <div class="error-email"></div>
+                    <div class="text-fail-email"></div>
+                  </div>
 
-                  <input
-                    class="confirm-password-registr"
-                    type="password"
-                    id="confirm-password"
-                    name="confirm-password"
-                    placeholder="Подтвердите пароль"
-                  />
+                  <div class="registr-name-phone-container">
+                    <div>
+                      <input
+                        class="input-registr-name field"
+                        type="text"
+                        id="registr-name"
+                        name="person-name"
+                        placeholder="ФИО"
+                      />
+                      <div class="error-name"></div>
+                    </div>
+                    <div class="phone-registr-relative">
+                      <input
+                        class="input-registr-phone field js-input-phone"
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Телефон"
+                      />
+                      <div class="error-phone"></div>
+                    </div>
+                  </div>
+
+                  <div class="new-password-registr-relative">
+                    <input
+                      class="new-password-registr field js-input-password"
+                      type="password"
+                      id="new-password"
+                      name="new-password"
+                      placeholder="Пароль"
+                      autocomplete="off"
+                    />
+                    <!-- <div class="eye-for-pass-block"> -->
+                    <i class="fa fa-eye eye-on-pass"></i>
+                    <i class="fa fa-eye-slash eye-off-pass"></i>
+                    <!-- </div> -->
+
+                    <div class="error-password"></div>
+                    <div class="notification-password"></div>
+                  </div>
+                  <div class="confirm-password-registr-relative">
+                    <input
+                      class="confirm-password-registr field js-input-confirm-password"
+                      type="password"
+                      id="confirm-password"
+                      name="confirm-password"
+                      placeholder="Подтвердите пароль"
+                      autocomplete="off"
+                    />
+                    <!-- <div> -->
+                    <i class="fa fa-eye eye-confirm-on-pass"></i>
+                    <i class="fa fa-eye-slash eye-confirm-off-pass"></i>
+                    <!-- </div> -->
+                    <div class="error-confirm-password"></div>
+                    <div class="not-match"></div>
+                  </div>
+
                   <div class="container-checkbox">
                     <input
-                      class="checkbox"
+                      class="checkbox js-input-checkbox"
                       type="checkbox"
                       id="check-terms"
                       name="accept-the-terms"
-                      value="terms-and-conditions"
                     />
-                    <label for="accept-the-terms"
-                      >Я даю согласие на обработку персональных данных</label
+
+                    <label for="check-terms " class="label">
+                      Я даю согласие на обработку персональных данных</label
                     >
                   </div>
 
@@ -132,11 +177,11 @@
                   На него будет выслано письмо со <br />ссылкой на изменение
                   пароля
                 </p>
-                <form action="/" method="post">
+                <form id="form-reset-password" action="#">
                   <input
                     class="input-reset-email"
                     type="email"
-                    id="reset-email"
+                    id="reset-password"
                     name="reset-email"
                     placeholder="Email"
                   />
@@ -151,6 +196,8 @@
         </div>
       </div>
     </div>
+    <script src="reset-passoword.js"></script>
+    <script src="login.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
