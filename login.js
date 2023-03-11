@@ -1,4 +1,23 @@
 const formLogin = document.getElementById("form-login");
+const eyeOffPassLogin = document.querySelector(".eye-off-pass-login");
+const eyeOnPassLogin = document.querySelector(".eye-on-pass-login");
+
+eyeOffPassLogin.addEventListener("click", function (event) {
+  const target = event.target;
+  if (target) {
+    eyeOnPassLogin.style.display = "block";
+    eyeOffPassLogin.style.display = "none";
+    password.type = "text";
+  }
+});
+
+eyeOnPassLogin.addEventListener("click", function (e) {
+  if (e.target) {
+    eyeOnPassLogin.style.display = "none";
+    eyeOffPassLogin.style.display = "block";
+    password.type = "password";
+  }
+});
 
 formLogin.addEventListener("submit", async (event) => {
   event.preventDefault();

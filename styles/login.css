@@ -32,10 +32,6 @@ input:focus {
   margin-top: 70px;
 }
 
-.header-logo{
-
-}
-
 .input-login-email {
   width: 450px;
   padding: 10px;
@@ -204,4 +200,25 @@ input:focus {
   background-color: #55dcaa;
   cursor: pointer;
   color: #fff;
+}
+/* ************************************* */
+
+.eye-login-container {
+  position: relative;
+}
+.eye-on-pass-login {
+  position: absolute;
+  top: -63px;
+  right: 13px;
+  display: none;
+}
+.eye-off-pass-login {
+  position: absolute;
+  top: -63px;
+  right: 13px;
+}
+
+.eye-off-pass-login:hover,
+.eye-on-pass-login:hover {
+  color: #55dcaa;
 }
