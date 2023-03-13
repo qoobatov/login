@@ -3,15 +3,21 @@ const resetPasswordForm = document.getElementById("form-reset-password");
 resetPasswordForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const email = document.getElementById("reset-email").value;
+  const email = document.getElementById("reset-email");
+  const emailValue = document.getElementById("reset-email").value;
 
-  const response = await fetch("/api/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email }),
-  });
+  const response = await fetch(
+    "https://web.chat2desk.kg/api/user/reset_password",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ emailValue }),
+    }
+  );
+
+  console.log("reset password", email);
 
   const { success } = await response.json();
 

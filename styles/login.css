@@ -31,6 +31,24 @@ input:focus {
 .top-space {
   margin-top: 70px;
 }
+.blank-field-login_email_relative__container {
+  position: relative;
+}
+.blank-field-login_pass_relative__container {
+  position: relative;
+}
+.blank-field-login__email__error {
+  position: absolute;
+  top: 42px;
+  /* right: 471px; */
+  color: red;
+}
+.blank-field-login__pass__error {
+  position: absolute;
+  top: 42px;
+  /* right: 471px; */
+  color: red;
+}
 
 .input-login-email {
   width: 450px;
@@ -221,4 +239,50 @@ input:focus {
 .eye-off-pass-login:hover,
 .eye-on-pass-login:hover {
   color: #55dcaa;
+}
+
+/* ****************************************** 2FA-content***************************** */
+
+.tab-content-2fa {
+  display: none;
+}
+
+.input-2fa {
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 25px;
+  /* margin: 10px 0; */
+  border: 0;
+  border: 1px solid #c2bfbf;
+  border-radius: 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn-2fa {
+  width: 450px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  /* margin: 10px 0; */
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #55dcaa;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.btn-2fa:hover,
+.btn-2fa:focus {
+  background-color: #55dcaa;
+  cursor: pointer;
+  color: #fff;
+}
+
+.notification-2fa {
+  text-align: center;
 }
