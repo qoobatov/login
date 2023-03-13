@@ -29,7 +29,11 @@
           <img class="c2d-logo" src="./imgs/c2d.png" alt="" />
 
           <div class="tab-btns-block">
-            <button class="btn-tab-log btn-tab-log_active button">Войти</button>
+            <button
+              class="btn-tab-log btn-tab-log_active button btn-for-2fa-header"
+            >
+              Войти
+            </button>
             <button class="btn-tab-sign button">Регистрация</button>
           </div>
           <!-- ---------------------------------------------------header logo------------------------------------- -->
@@ -37,22 +41,27 @@
             <div class="tab-content">
               <div class="tab-content-login">
                 <form id="form-login" action="#">
-                  <input
-                    class="input-login-email"
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                  /><br />
-
-                  <input
-                    class="input-login-password"
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Пароль"
-                    autocomplete="off"
-                  /><br />
+                  <div class="blank-field-login_email_relative__container">
+                    <input
+                      class="input-login-email"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                    /><br /><br />
+                    <div class="blank-field-login__email"></div>
+                  </div>
+                  <div class="blank-field-login_pass_relative__container">
+                    <input
+                      class="input-login-password"
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Пароль"
+                      autocomplete="off"
+                    /><br /><br />
+                    <div class="blank-field-login__pass"></div>
+                  </div>
                   <div class="eye-login-container">
                     <i class="fa fa-eye eye-on-pass-login"></i>
                     <i class="fa fa-eye-slash eye-off-pass-login"></i>
@@ -192,6 +201,27 @@
                 </form>
               </div>
             </div>
+            <!--  --------------------------------------2FA---------------------------- -->
+
+            <div class="tab-content-2fa">
+              <div class="tab-content-2fa-password">
+                <p class='notification-2fa'>Вам на email отправлен одноразовый код:</p>
+                <form id="form-2fa" action="#">
+                  <div>
+                    <input
+                      type="text"
+                      class="input-2fa"
+                      name="text-2fa"
+                      placeholder="введите одноразовый код"
+                    />
+                  </div>
+                  <div class="btn-2fa-parent">
+                    <button class="btn-2fa">Войти</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- ---------------------------------------------------------------------------- -->
           </div>
         </div>
       </div>

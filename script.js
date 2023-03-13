@@ -39,7 +39,8 @@ window.addEventListener("DOMContentLoaded", () => {
     btnsParent = document.querySelector(".tab-btns-block"),
     resetLinkParent = document.querySelector(".reset-password-parent"),
     resetBtnParent = document.querySelector(".reset-btns-block"),
-    addedMargin = document.querySelector(".container-login");
+    addedMargin = document.querySelector(".container-login"),
+    btn2faParent = document.querySelector(".btn-2fa-parent");
 
   function hideTabContent() {
     tabsContent.forEach((item) => {
@@ -86,6 +87,10 @@ window.addEventListener("DOMContentLoaded", () => {
       showTabContent(0);
     }
   });
+
+
+
+
 
   // ************************************ end tabs ******************************************************
 
@@ -186,31 +191,46 @@ window.addEventListener("DOMContentLoaded", () => {
       confirmPasswordValue
     );
 
-    // глазок пароля
+    // отпрвка запроса на регистрацию.
 
-    const response = await fetch(
-      "https://web.chat2desk.kg/api/user/sign_up?lang=ru",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          companyNameValue,
-          inputEmailValue,
-          inputNameValue,
-          inputPhoneValue,
-          passwordValue,
-          confirmPasswordValue,
-        }),
-      }
-    );
-
-    // заставка
+    const response = await fetch("https://web.chat2desk.kg/api/user/sign_up", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        country: 217,
+        // company_name: companyNameValue,
+        email: inputEmailValue,
+        company_name: inputNameValue,
+        // inputPhoneValue,
+        password: passwordValue,
+        password_confirmation: confirmPasswordValue,
+        country_id: "115",
+      }),
+    });
 
     if (response.ok) {
       const data = await response.json();
       console.log(data);
+      if (data.status == "success") {
+        location.href = "https://web.chat2desk.kg?auth_key=" + data.auth_key;
+        let createLead = await fetch(
+          "https://vtiger.crm.kg/tildaGetLeads.php",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: first_name,
+              company: company_name,
+              Email: email,
+              Phone: phone,
+            }),
+          }
+        );
+      }
     } else {
       console.log("Данные не отправлены");
     }
