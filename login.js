@@ -51,6 +51,7 @@ function validateForm(emailVal, passwordVal) {
 }
 formLogin.addEventListener("submit", async (event) => {
   event.preventDefault();
+  
   const tabContentLogin = document.querySelector(".tab-content-login");
   const emailValue = document.getElementById("email").value;
   const passwordValue = document.getElementById("password").value;

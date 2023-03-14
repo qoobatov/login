@@ -88,10 +88,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
-
-
-
   // ************************************ end tabs ******************************************************
 
   // ************************************ forms validation in block registration ******************************************
@@ -166,6 +162,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // mask for input phone----------------------------------------------------------------
+
+  let maskOptions = {
+      mask: '+996(000)00-00-00',
+      lazy: false
+  } 
+  let mask = new IMask(phone, maskOptions);
+  
   // Form 'submit' ------------------------------------------------------------------------
 
   formRegistration.addEventListener("submit", async (event) => {
