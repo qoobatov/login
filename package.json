@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "babel-loader": "^9.1.2",
+    "imask": "^6.4.3"
+  }
+}
