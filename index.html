@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./styles/signin.css" />
     <link rel="stylesheet" href="./styles/reset-pass.css" />
     <link rel="stylesheet" href="./styles/test.css" />
+    <link rel="stylesheet" href="./styles/loader.css" />
 
     <title>Login</title>
   </head>
@@ -24,6 +25,12 @@
       <div data-close class="modal-close">&times;</div>
       <div class="modal-content">
         <div class="container-login">
+          <!--  ---------------------------------------loader---------------------------------------------- -->
+
+          <div class="loader-page">
+            <div class="preloader"></div>
+          </div>
+
           <!-- ----------------------------------------header logo ------------------------------------------------->
 
           <img class="c2d-logo" src="./imgs/c2d.png" alt="" />
@@ -223,6 +230,23 @@
               </div>
             </div>
             <!-- ---------------------------------------------------------------------------- -->
+            <!-- --------------------------------------------------Wrong login or password.----------------------------- -->
+            <div class="tab-content-wrong-pass-and-login">
+              <div>
+                <p class="notification-wrong-pass-and-login">
+                  * Вы ввели неверные данные, попробуйте еще раз.
+                </p>
+              </div>
+            </div>
+            <div class="wrong-pass-and-login-over-fife">
+              <div>
+                <p class="notification-wrong-pass-and-login-over-fife">
+                  * Вы ввели неверные данные больше 5 раз рекомендуем сбросить пароль.
+                </p>
+              </div>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------------------------------- -->
           </div>
         </div>
       </div>

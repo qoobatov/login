@@ -54,6 +54,7 @@ input:focus {
   width: 450px;
   padding: 10px;
   margin-bottom: 10px;
+  margin-top: 20px;
   border: 0;
   border: 1px solid #c2bfbf;
   border-radius: 15px;
@@ -285,4 +286,31 @@ input:focus {
 
 .notification-2fa {
   text-align: center;
+}
+/* **********************************************Wrong login or password.************************************************* */
+
+.tab-content-wrong-pass-and-login {
+  text-align: center;
+  position: relative;
+  display: none;
+}
+
+.notification-wrong-pass-and-login {
+  color: red;
+  position: absolute;
+  top: -305px;
+  right: 42px;
+}
+
+.wrong-pass-and-login-over-fife {
+  text-align: center;
+  position: relative;
+  display: none;
+}
+
+.notification-wrong-pass-and-login-over-fife {
+  color: red;
+  position: absolute;
+  top: -322px;
+  right: 42px;
 }
